@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/login']"><img src="/assets/img/logo_picom.png" class="img-thumbnail"
+          width="100" height="100" alt=""></a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active h2">
+            <a class="nav-link text-success">Administrateur </a>
+          </li>
+        </ul>
+      </div>
+      <form class="d-flex" role="search">
+        <button class="btn btn-outline-success" type="submit">Se déconnecter</button>
+      </form>
+    </div>
+
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
