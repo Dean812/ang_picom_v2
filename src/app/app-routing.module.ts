@@ -9,11 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'public', loadChildren: () => import('./public/public.module')
-      .then(module => module.PublicModule)
+      .then(module => module.PublicModule), canActivate: [AuthGuard]
   },
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module')
-      .then(module => module.AdminModule)
+      .then(module => module.AdminModule), canActivate: [AuthGuard]
   }
 
 ];
