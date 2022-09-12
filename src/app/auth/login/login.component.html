@@ -8,14 +8,15 @@
         <h2>Authentification</h2>
       </div>
       <div>
-        <form>
+        <form (submit)="onSubmit()" [formGroup]="authForm">
           <div class="form-group mb-3">
             <label for="exampleInputEmail1">Adresse Mail</label>
-            <input type="email" class="form-control" id="email" placeholder="email@orsys.fr">
+            <input type="email" class="form-control" id="email" placeholder="email@orsys.fr" formControlName="email">
           </div>
           <div class="form-group mb-3">
             <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+            <input type="password" class="form-control" id="password" placeholder="Mot de passe"
+              formControlName="password">
           </div>
           <div class="form-group mb-3">
             <input type="checkbox" class="form-check-input mr-5" id="exampleCheck1">

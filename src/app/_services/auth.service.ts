@@ -22,11 +22,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   createUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur> {
-    return this.http.post<Utilisateur>(this.url + '/utilisateurs/clientDto', JSON.stringify(utilisateur), this.httpOptions);
+    return this.http.post<Utilisateur>(this.url + '/utilisateurs/clientDto', utilisateur, this.httpOptions);
   }
 
-  getUtilisateur(): Observable<Utilisateur[]> {
-    return this.http.get<Utilisateur[]>(this.url + '/utilisateurs/clientDto', this.httpOptions);
+  getUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur> {
+    return this.http.post<Utilisateur>(this.url + '/utilisateurs/authUtilisateur', utilisateur, this.httpOptions);
   }
 
 
