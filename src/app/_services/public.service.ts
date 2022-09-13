@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PublicService {
 
-  url = "localhost:8080/api";
+  url = "http://localhost:8080/api";
 
   httpOptions = {
     headers: new HttpHeaders({

@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       this.utilisateur.motDePasse = this.authForm.get('password')?.value;
       this.authService.getUtilisateur(this.utilisateur).subscribe((data: {}) => {
         console.log(this.utilisateur.numeroDeTelephone + "  login.component.ts checking to finish");
-
+        console.log(data)
         AuthService.isLogged.next(true);
         this.router.navigate(['/admin']);
 
