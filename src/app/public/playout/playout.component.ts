@@ -12,4 +12,7 @@ export class PlayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout() {
+    sessionStorage.clear();
+  }
 }

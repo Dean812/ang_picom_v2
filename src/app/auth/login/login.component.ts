@@ -36,8 +36,14 @@ export class LoginComponent implements OnInit {
       this.authService.getUtilisateur(this.utilisateur).subscribe((data: {}) => {
         console.log(this.utilisateur.numeroDeTelephone + "  login.component.ts checking to finish");
         console.log(data)
+        sessionStorage.setItem('utilisateur', JSON.stringify(data));
         AuthService.isLogged.next(true);
-        this.router.navigate(['/admin']);
+        if (JSON.parse(sessionStorage.getItem('utilisateur')!).role == "roleAdmin") {
+          this.router.navigate(['/admin']);
+        } else {
+          this.router.navigate(['/public']);
+        }
+
 
       });
     } else {

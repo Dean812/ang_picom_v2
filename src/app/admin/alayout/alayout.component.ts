@@ -12,4 +12,7 @@ export class AlayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout() {
+    sessionStorage.clear();
+  }
 }
