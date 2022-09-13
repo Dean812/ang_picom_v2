@@ -34,8 +34,10 @@ export class LoginComponent implements OnInit {
       this.utilisateur.email = this.authForm.get('email')?.value;
       this.utilisateur.motDePasse = this.authForm.get('password')?.value;
       this.authService.getUtilisateur(this.utilisateur).subscribe((data: {}) => {
+        console.log(this.utilisateur.numeroDeTelephone + "  login.component.ts checking to finish");
+
         AuthService.isLogged.next(true);
-        this.router.navigate(['/public']);
+        this.router.navigate(['/admin']);
 
       });
     } else {
