@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Tarif } from '../_model/tarif';
+import { TrancheHoraire } from '../_model/trancheHoraire';
+import { Zone } from '../_model/zone';
 
 @Injectable({
   providedIn: 'root'
@@ -23,15 +25,18 @@ export class AdminService {
     return this.http.get<Tarif[]>(this.url + '/tarifs/ensembleTarif', this.httpOptions)
   }
 
-  // updateTarif(id: any, tarif: Tarif): Observable<Tarif> {
-  //   return this.http.put<Tarif>(this.url + '/clients/', JSON.stringify(tarif), this.httpOptions)
-  // }
+  getZone(): Observable<Zone[]> {
+    return this.http.get<Zone[]>(this.url + '/tarifs/ensembleZone', this.httpOptions)
+  }
 
-  // createTarif(tarif: Tarif): Observable<Tarif> {
-  //   return this.http.post<Tarif>(this.url + '/clients', JSON.stringify(tarif), this.httpOptions)
-  // }
+  getTrancheHoraire(): Observable<TrancheHoraire[]> {
+    return this.http.get<TrancheHoraire[]>(this.url + '/tarifs/ensembleTrancheHoraire', this.httpOptions)
+  }
 
-  // deleteClient(id: any) {
-  //   return this.http.delete<Tarif>(this.url + '/clients/' + id, this.httpOptions)
-  // }
+
+  createTarif(tarif: Tarif): Observable<Tarif> {
+    return this.http.post<Tarif>(this.url + '/tarifs/ajoutTarif', tarif, this.httpOptions)
+  }
+
+
 }
