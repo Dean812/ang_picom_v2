@@ -14,21 +14,12 @@
         <th>Annonce</th>
         <th>Supprimer</th>
       </tr>
-      <tr>
-        <td>52</td>
-        <td>Sega c'est plus fort que toi</td>
+      <tr *ngFor="let annonce of annonces">
+        <td>{{annonce.id}}</td>
+        <td>{{annonce.contenu}}</td>
         <td>X</td>
       </tr>
-      <tr>
-        <td>52</td>
-        <td>Sega c'est plus fort que toi</td>
-        <td>X</td>
-      </tr>
-      <tr>
-        <td>52</td>
-        <td>Sega c'est plus fort que toi</td>
-        <td>X</td>
-      </tr>
+
     </tbody>
   </table>
 </div>

@@ -16,9 +16,9 @@ export class TarifComponent implements OnInit {
   zones: Zone[] = [];
   tranchesHoraires: TrancheHoraire[] = [];
 
+  // used during submitting
   @Input()
   tarif = new Tarif();
-
   tarifForm: FormGroup = new FormGroup(0);
 
 

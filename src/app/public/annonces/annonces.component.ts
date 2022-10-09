@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Annonce } from 'src/app/_model/annonce';
+import { PublicService } from 'src/app/_services/public.service';
 
 @Component({
   selector: 'app-annonces',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnoncesComponent implements OnInit {
 
-  constructor() { }
+annonces: Annonce[] = [];
+
+  constructor(private publicService: PublicService) { }
 
   ngOnInit(): void {
+    this.publicService.getAnnonces().subscribe((data: Annonce[]) => {
+      console.log(data);
+      this.annonces = data;
+    });
   }
 
 }
